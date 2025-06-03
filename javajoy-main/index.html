@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>JavaJoy Coffee Shop</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+  <header>
+    <nav>
+      <div class="logo">
+        <span class="logo-text">Java</span><span class="logo-text-alt">Joy</span>
+      </div>
+      <ul class="nav-links">
+        <li><a href="#home"><i class="fas fa-home"></i> Home</a></li>
+        <li><a href="#menu"><i class="fas fa-coffee"></i> Menu</a></li>
+        <li><a href="#about"><i class="fas fa-info-circle"></i> About</a></li>
+        <li><a href="#contact"><i class="fas fa-envelope"></i> Contact</a></li>
+        <li>
+          <a href="#" id="cart-icon">
+            <i class="fas fa-shopping-cart"></i>
+            <span id="cart-count">0</span>
+          </a>
+        </li>
+      </ul>
+      <div class="menu-toggle">
+        <i class="fas fa-bars"></i>
+      </div>
+    </nav>
+  </header>
+
+  <section id="home" class="hero-section">
+    <div class="hero-content">
+      <h1>Welcome to Our Coffee Shop</h1>
+      <p>Experience the best coffee in town</p>
+      <a href="#menu" class="cta-button">Explore Menu</a>
+    </div>
+  </section>
+
+  <section id="menu" class="menu">
+    <h2>Our Menu</h2>
+    <div class="menu-grid">
+      <div class="menu-item">
+        <div class="img-container">
+          <img src="img/Cappuccino.jpg" alt="Cappuccino">
+        </div>
+        <h3>Cappuccino</h3>
+        <p>Rich espresso topped with creamy milk foam</p>
+        <p class="price">$4.99</p>
+        <button class="order-btn">
+          <i class="fas fa-shopping-cart"></i>
+          <span>Add to Cart</span>
+        </button>
+      </div>
+      <div class="menu-item">
+        <div class="img-container">
+          <img src="img/Espresso.jpg" alt="Espresso">
+        </div>
+        <h3>Espresso</h3>
+        <p>Pure and intense coffee shot</p>
+        <p class="price">$3.99</p>
+        <button class="order-btn">
+          <i class="fas fa-shopping-cart"></i>
+          <span>Add to Cart</span>
+        </button>
+      </div>
+      <div class="menu-item">
+        <div class="img-container">
+          <img src="img/Latte.jpg" alt="Latte">
+        </div>
+        <h3>Latte</h3>
+        <p>Smooth espresso with steamed milk</p>
+        <p class="price">$4.49</p>
+        <button class="order-btn">
+          <i class="fas fa-shopping-cart"></i>
+          <span>Add to Cart</span>
+        </button>
+      </div>
+    </div>
+  </section>
+
+  <section id="about" class="section">
+    <h2>About Us</h2>
+    <div class="about-content">
+      <div class="about-text">
+        <p>We are passionate about serving the best coffee experience to our customers. Our journey started in 2020 with a simple mission: to provide high-quality coffee in a welcoming atmosphere.</p>
+        <p>Experience the cozy ambiance of our coffee shop, where every cup tells a story and every visit feels like home.</p>
+      </div>
+      <div class="about-images">
+        <div class="about-img-container">
+          <img src="img/aboutus1.jpg" alt="Our Coffee Shop Interior" class="about-img">
+        </div>
+        <div class="about-img-container">
+          <img src="img/aboutus2.jpg" alt="Our Coffee Bar" class="about-img">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact" class="section">
+    <h2>Contact Us</h2>
+    <div class="contact-container">
+      <div class="contact-info">
+        <div class="info-item">
+          <i class="fas fa-map-marker-alt"></i>
+          <p>123 Coffee Street, City, Country</p>
+        </div>
+        <div class="info-item">
+          <i class="fas fa-phone"></i>
+          <p>+1 234 567 890</p>
+        </div>
+        <div class="info-item">
+          <i class="fas fa-envelope"></i>
+          <p>info@coffeeshop.com</p>
+        </div>
+      </div>
+      <form class="contact-form">
+        <div class="form-group">
+          <label for="name">Name:</label>
+          <input type="text" id="name" name="name" required>
+        </div>
+        <div class="form-group">
+          <label for="email">Email:</label>
+          <input type="email" id="email" name="email" required>
+        </div>
+        <div class="form-group">
+          <label for="message">Message:</label>
+          <textarea id="message" name="message" required></textarea>
+        </div>
+        <button type="submit" class="submit-btn">Send Message</button>
+      </form>
+    </div>
+  </section>
+
+  <footer>
+    <div class="footer-content">
+      <div class="social-links">
+        <a href="#"><i class="fab fa-facebook"></i></a>
+        <a href="#"><i class="fab fa-instagram"></i></a>
+        <a href="#"><i class="fab fa-twitter"></i></a>
+      </div>
+      <p>&copy; 2024 Coffee Shop. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script src="main.js"></script>
+
+  <!-- Cart Modal -->
+  <div id="cart-modal" class="modal">
+    <div class="modal-content">
+      <span class="close">&times;</span>
+      <h2>Your Cart</h2>
+      
+      <!-- Cart View -->
+      <div id="cart-view">
+        <div id="cart-items">
+          <!-- Cart items will be dynamically added here -->
+        </div>
+        <div class="cart-total">
+          <h3>Total: $<span id="cart-total">0.00</span></h3>
+        </div>
+        <button id="checkout-btn" class="btn">
+          <i class="fas fa-shopping-cart"></i>
+          Proceed to Checkout
+        </button>
+      </div>
+
+      <!-- Payment View -->
+      <div id="payment-view" style="display: none;">
+        <button id="back-to-cart" class="back-btn">
+          <i class="fas fa-arrow-left"></i>
+          Back to Cart
+        </button>
+        
+        <h3>Select Payment Method</h3>
+        <div class="payment-methods">
+          <div class="payment-method">
+            <input type="radio" name="payment" id="esewa" value="esewa">
+            <label for="esewa" class="method-content">
+              <i class="fas fa-mobile-alt"></i>
+              <span>eSewa</span>
+            </label>
+          </div>
+          
+          <div class="payment-method">
+            <input type="radio" name="payment" id="bank" value="bank">
+            <label for="bank" class="method-content">
+              <i class="fas fa-university"></i>
+              <span>Bank Transfer</span>
+            </label>
+          </div>
+          
+          <div class="payment-method">
+            <input type="radio" name="payment" id="cash" value="cash">
+            <label for="cash" class="method-content">
+              <i class="fas fa-money-bill-wave"></i>
+              <span>Cash on Delivery</span>
+            </label>
+          </div>
+        </div>
+
+        <!-- Payment Details -->
+        <div id="esewa-details" class="payment-details" style="display: none;">
+          <h4>eSewa Payment</h4>
+          <div class="qr-placeholder">
+            <i class="fas fa-qrcode"></i>
+            <p>Scan QR Code</p>
+          </div>
+          <p>eSewa ID: 9841234567</p>
+        </div>
+
+        <div id="bank-details" class="payment-details" style="display: none;">
+          <h4>Bank Transfer Details</h4>
+          <p>Bank: Nepal Bank Limited</p>
+          <p>Account Name: JavaJoy Coffee</p>
+          <p>Account Number: 0123456789</p>
+          <p>Branch: Kathmandu</p>
+        </div>
+
+        <button id="confirm-payment" class="btn">
+          <i class="fas fa-check"></i>
+          Confirm Payment
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Notification Container -->
+  <div id="notification-container"></div>
+</body>
+</html>
